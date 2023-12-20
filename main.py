@@ -16,12 +16,15 @@ def generate_dataset(names_):
     project_ids = [i for i in range(n)]
     random.shuffle(project_ids)
     print(project_ids)
+    class_letters = "аибыжв"
+    class_numbers = ["10", "11"]
 
     for i in range(n):
         human = dict()
         human["id"] = i
         human["name"] = names_[i]
         human["titleProject_id"] = project_ids[i]
+        human["class"] = random.choice(class_numbers) + random.choice(class_letters)
 
 
 generate_dataset(names)
