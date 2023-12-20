@@ -25,7 +25,6 @@ def generate_dataset(names_):
         human["score"] = random.randint(20, 100)
         if random.random() < 0.2:
             human["score"] = "None"
-        print(human)
         data.append(human)
 
     return data
