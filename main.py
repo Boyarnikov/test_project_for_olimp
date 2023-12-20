@@ -1,5 +1,6 @@
 from Names import names
 import random
+import csv
 
 print(names)
 # im.mcko.ru/mo.php
@@ -31,8 +32,15 @@ def generate_dataset(names_):
         if random.random() < 0.2:
             human["score"] = "None"
         print(human)
+        data.append(human)
 
-generate_dataset(names)
+    return data
 
+data = generate_dataset(names)
+with open("students.csv", "w") as file:
+    writer = csv.DictWriter(file, ["id", "name", "titleProject_id", "class", "score"])
+    writer.writeheader()
+    writer.writerows(data)
 # id, Name(в формате ФИО), titleProject_id(номер проекта, целое число), class(класс, в
 # формате цифра+буква), score(оценки, в формате целого числа или None).
+
