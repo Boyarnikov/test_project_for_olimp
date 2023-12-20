@@ -12,7 +12,6 @@ def generate_dataset(names_):
     data = list()
     project_ids = [i for i in range(n)]
     random.shuffle(project_ids)
-    print(project_ids)
     class_letters = "аибыжв"
     class_numbers = ["10", "11"]
 
